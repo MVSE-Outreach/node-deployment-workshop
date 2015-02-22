@@ -7,5 +7,5 @@ $('form').submit(function(){
 });
 
 socket.on('chat message', function(msg){
-	$('#textzone').append($('<tr>').append($('<td>')).text(msg));
+	$('#textzone').append($('<tr>').append($('<td>')).text(msg.user + ': ' + msg.txt));
 });
