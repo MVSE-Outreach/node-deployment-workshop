@@ -1,0 +1,29 @@
+{
+  "name": "node-deployment-workshop",
+  "version": "1.0.0",
+  "homepage": "https://github.com/thomasmortensson/node-deployment-workshop",
+  "authors": [
+    "Thomas Mortensson <tm0797@bristol.ac.uk>",
+    "Graham Laming <gl1646@bristol.ac.uk>"
+  ],
+  "description": "A simple node chat server example for Bristol Digimakers",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Digimakers"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
