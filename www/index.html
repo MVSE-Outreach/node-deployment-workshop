@@ -1,21 +1,26 @@
 <!doctype html>
 <html>
   <head>
+    <!-- Page title -->
     <title>Socket.IO chat</title>
+    <!-- Bootstrap CSS -->
+    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
 
+  <!-- Top navigation bar -->
     <div class="navbar-wrapper">
       <div class="container">
-
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
           <div class="container">
             <div class="navbar-header">
+              <!-- Page title branding button -->
               <a class="navbar-brand" href="/">Digimakers</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
+                <!-- Add links to navbar here -->
                 <li><a href="#">Link 1</a></li>
                 <li><a href="#">Link 2</a></li>
                 <li><a href="#">Link 3</a></li>
@@ -23,42 +28,44 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-
+    <!-- Main page -->
     <div class="container">
       <div class="jumbotron">
+        <!-- Top text -->
       	<h1>Welcome to your chat.</h1> 
           <div style="height : 500px; background : white;">
+            <!-- Messages inserted here -->
             <table id="textzone" class="table table-striped"><tbody></tbody></table>
           </div>
-          <form action="">
+          <form>
             <div class="input-group">
+              <!-- Text field -->
               <input class="form-control" id="chatText" autocomplete="off"  placeholder="Enter message">
               <span class="input-group-btn">
+                <!-- Submit button -->
                 <button class="btn btn-default">Submit</button>
               </span>
-            </div><!-- /input-group -->
+            </div>
           </form>
         </div>
-      
 
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
+      <!-- Footer -->
       <footer>
         <p>2015 Digimakers Bristol.</p>
       </footer>
 
     </div>
   
-  </body>
-    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Page scripts -->
     <script src="components/socket.io-client/socket.io.js"></script>
     <script src="components/jquery/dist/jquery.min.js"></script>
+
+    <!-- User script -->
     <script src="chat.js"></script>
+  </body>
+    
 
 </html>
