@@ -7,5 +7,21 @@ $('form').submit(function(){
 });
 
 socket.on('chat message', function(msg){
-	$('#textzone').append($('<tr>').append($('<td>')).text(msg.user + ': ' + msg.txt));
+	var user = $('<p>');
+	var txt = $('<b>');
+	txt.text(msg.user + ': ');
+	user.append(txt);
+	user.css('display','inline-block');
+	
+	var message = $('<p>');
+	message.text(msg.txt);
+	message.css('display','inline-block');
+	
+	var row = $('<tr>');
+
+	row.append(user);
+	row.append(message);
+
+	$('#textzone').append(row);
+
 });
