@@ -16,13 +16,13 @@ This is a basic framework which gives participants a head-start with Node and sh
 
 ## How to use
 
-Install node - `sudo apt-get install nodejs`
-Install npm - `sudo apt-get install npm`
-Install git - `sudo apt-get install git`
-Clone this git repository - `git clone git@github.com/thomasmortensson/node-deployment-workshop`
-Install bower - `npm install -g bower`
-Install node dependencies - `npm install`
-Install bower dependences - `bower install`
-Run server - `npm start`
-Run web server - `python -m SimpleHTTPServer`
-Open browser and enjoy - `http://localhost:8000`
+Install node - `sudo apt-get install nodejs`  
+Install npm - `sudo apt-get install npm`  
+Install git - `sudo apt-get install git`  
+Clone this git repository - `git clone git@github.com/thomasmortensson/node-deployment-workshop`  
+Install bower - `npm install -g bower`  
+Install node dependencies - `npm install`  
+Install bower dependences - `bower install`  
+Run server - `npm start`  
+Run web server - `python -m SimpleHTTPServer`  
+Open browser and enjoy - `http://localhost:8000`  
