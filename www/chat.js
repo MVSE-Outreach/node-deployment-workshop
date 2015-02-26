@@ -36,4 +36,7 @@ socket.on('chat message', function(msg){
 
 	$('#textzone').append(row);
 
+	var elem = document.getElementById('outerText');
+  	elem.scrollTop = elem.scrollHeight;
+
 });
