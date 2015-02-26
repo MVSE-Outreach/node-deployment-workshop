@@ -64,21 +64,126 @@ All content explained in this workshop is contained in an easily deployable repo
 
 You can browse through this repository at your own leisure if you wish to go back over things we have covered in the workshop or just wish to have a simple base application to start with. Using the instructions in the README.md file you should be able to easily deploy this application on \href{http://koding.com}{koding.com} or in a \href{http://digitalocean.com}{DigitalOcean} droplet.
 
+\section{What's next?}
+
+In this workshop we have learnt some of the basics of web development. We have touched upon HTML, Javascript and CSS as well as some backend technologis such as Apache serving, Node.JS and Socket.IO. The following deployment sections will show you how to load the application you have created (or the one from our repository) onto a cloud service or your own Raspberry Pi server.
+
 \section{Deployment}
 
-The Koding system uses an operating system called ubuntu which is similar to that of the Raspberry Pi. All of the commands supplied below are compatible with the raspbian distribution bundled on the Raspberry Pi. 
+The Koding system uses an operating system called Ubuntu which is similar to that of the Raspberry Pi. All of the commands supplied below are compatible with the Raspbian distribution bundled on the Raspberry Pi. 
 
-\subsection{ubuntu and apt-get}
+\subsection{Accessing the SSH remote terminal}
+\label{sec:terminal}
 
-To install packages within ubuntu or debian 
+\begin{itemize}
+\item Windows --- Download and install Git. \url{http://git-scm.com/download/win}. Open Programs -$>$ Git Bash
+\item Mac --- Navigate to /Applications/Utilities/Terminal.
+\item Raspberry Pi --- Navigate to Accessories -$>$ LxTerminal.
+\end{itemize}
+
+\subsubsection{Making the connection}
+\label{sec:MakingTheConnection}
+
+\begin{itemize}
+\item Your hostname ---``XXX.koding.com'' 
+\item Username --- ubuntu
+\item Password --- emailed to you
+\end{itemize}
+
+Type into the terminal window:
+
+\begin{lstlisting}
+ssh ubuntu@10.147.243.78
+\end{lstlisting}
+Hit enter. You will now be prompted to type a password. Type this in (You will not see the characters on screen) and hit enter. You should be seeing something similar to this:
+
+\begin{lstlisting}
+Last login: Thu Jun  5 12:22:54 2014 from 195.246.108.112
+ubuntu@ip-10-147-243-78:~$
+\end{lstlisting}
+To exit type:
+\begin{lstlisting}
+exit
+\end{lstlisting}
+
+A good place to go for help for basic Linux/Unix help is here:\\
+\\
+\url{http://cssbristol.co.uk/tutorials/linux-unix/}\\
+\\
+For an in depth overview of how to use these types of tools look at:
+\url{http://datatoolkit.org/documentation.pdf}
+
+\subsection{Uploading and Downloading files}
+
+To upload and download files from the machine we will use SFTP. This is a Secure version of the old FTP you may be used to. We will be using Filezilla although any SFTP client will work.\\
+\\
+Using SFTP means you don't have to bother with command lines, so it's much easier for beginners. We recommend downloading a program called Filezilla, It's available for free on Mac, Linux and Windows. (I would like to point out that any SFTP client will work just as well).\\
+\\
+\url{https://filezilla-project.org/download.php?type=client}\\
+This program should be pretty self explanatory, you will need the same information to connect as with SSH.
+
+\subsection{Ubuntu and apt-get}
+
+To install packages within Ubuntu or Debian we use apt-get from the command line. To install the packages we will need for the project open a terminal and type:
+\begin{lstlisting}
+sudo apt-get update
+sudo apt-get install npm git unzip
+\end{lstlisting}
+
+\subsection{Getting our code on the server}
+
+If you just want a working copy of our code you can issue the following command to get a clean copy of the deployment:
+\begin{lstlisting}
+git clone https://github.com/thomasmortensson/node-deployment-workshop.git
+\end{lstlisting}
+
+To upload your own code to the server, first create a zip folder with your work. Once you have this use SFTP to upload the file to the home directory. Once uploaded, login to the server with SSH and type:
+\begin{lstlisting}
+unzip nameOfZip.zip
+\end{lstlisting}
+We can now change directories so we can interact with our code.
+\begin{lstlisting}
+cd node-deployment-workshop
+\end{lstlisting}
 
 \subsection{Node and npm}
 
+As we have generated a package.json file you can install all Node dependencies for the project with npm by typing:
+\begin{lstlisting}
+npm install
+\end{lstlisting}
+
+You can add dependencies as you go by typing:
+\begin{lstlisting}
+npm install --save <package>
+\end{lstlisting}
+
 \subsection{Bower}
+To install Bower type:
 
-\section{Installation under Windows - Not recommended}
+\begin{lstlisting}
+sudo npm install -g bower
+\end{lstlisting}
 
-\subsection{}
+As we have generated the bower.json and .bowerrc files you can install all javascript dependencies for the project with Bower by typing:
+\begin{lstlisting}
+bower install
+\end{lstlisting}
+These will be installed in the www/components directory.
+
+You can add dependencies as you go by typing:
+\begin{lstlisting}
+bower install --save <package>
+\end{lstlisting}
+
+\subsection{Running Node server}
+We can run our Node.JS server by issuing the command:
+\begin{lstlisting}
+npm start
+\end{lstlisting}
+The start script is defined in the package.json file as: ``node server.js''
+
+\subsection{Web Hosting}
 
 
 
