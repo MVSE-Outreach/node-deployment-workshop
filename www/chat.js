@@ -20,11 +20,12 @@ socket.on('chat message', function(msg){
 	var txt = $('<b>');
 	txt.text(msg.user + ': ');
 
-	var user = $('<p>');
+	var user = $('<div>');
 	user.append(txt);
 	user.css('display','inline-block');
+	user.css('padding-right','10px');
 	
-	var message = $('<p>');
+	var message = $('<div>');
 	message.text(msg.txt);
 	message.css('display','inline-block');
 	

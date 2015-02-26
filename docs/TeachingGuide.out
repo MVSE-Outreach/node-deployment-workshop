@@ -1,2 +1,8 @@
 \BOOKMARK [1][-]{section.1}{Introduction to Node - What is it?}{}% 1
 \BOOKMARK [1][-]{section.2}{Getting the source}{}% 2
+\BOOKMARK [1][-]{section.3}{Deployment}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{ubuntu and apt-get}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Node and npm}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Bower}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Installation under Windows - Not recommended}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{}{section.4}% 8
