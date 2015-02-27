@@ -2,7 +2,7 @@
 \BOOKMARK [1][-]{section.2}{Getting the source}{}% 2
 \BOOKMARK [1][-]{section.3}{What's next?}{}% 3
 \BOOKMARK [1][-]{section.4}{Deployment}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Accessing the SSH remote terminal}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.1}{Accessing the remote terminal via SSH}{section.4}% 5
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Making the connection}{subsection.4.1}% 6
 \BOOKMARK [2][-]{subsection.4.2}{Uploading and Downloading files}{section.4}% 7
 \BOOKMARK [2][-]{subsection.4.3}{Ubuntu and apt-get}{section.4}% 8

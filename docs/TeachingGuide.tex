@@ -61,64 +61,65 @@ All content explained in this workshop is contained in an easily deployable repo
 \end{center}
 }
 
-You can browse through this repository at your own leisure if you wish to go back over things we have covered in the workshop or just wish to have a simple base application to start with. Using the instructions in the README.md file you should be able to easily deploy this application on \href{http://koding.com}{Koding.com} or in a \href{http://digitalocean.com}{DigitalOcean} droplet.
+You can browse through this repository at your own leisure if you wish to go back over things we have covered in the workshop or just wish to have a simple base application to start with. Using the instructions in the README.md file and those provided in the deployment section of this handout, you should be able to easily deploy this application on \href{http://koding.com}{Koding.com} or in a \href{http://digitalocean.com}{DigitalOcean} droplet.
 
 \section{What's next?}
 
-In this workshop we have learnt some of the basics of web development. We have touched upon HTML, Javascript and CSS as well as some back-end technologies such as Apache serving, Node.JS and Socket.IO. The following deployment sections will show you how to load the application you have created (or the one from our repository) onto a cloud service or your own Raspberry Pi server.
+In this workshop we have learnt some of the basics of web development. We have touched upon HTML, JavaScript and CSS as well as some back-end technologies such as Apache, Node.JS and Socket.IO. The following section on deployment will show you how to load the application you have created (or the one from our repository) onto a cloud service or on your own Raspberry Pi.
 
 \section{Deployment}
+Koding.com is great, but (on the free tier) your server will power-down after 60 minutes of inactivity. In order to keep your application running, the server also needs to stay on - this is where cloud environments are often used. Here we will be discussing using \href{http://digitalocean.com}{DigitalOcean} droplets, but any cloud service (Heroku, Amazon Web Services, Google Compute Engine, etc) will work just as well.\\
+\\
+Keeping a small web server running is also a perfect application for a Raspberry Pi! However, running a web server from your own home to be accessible on the wider Internet (on a Raspberry Pi or desktop PC) has other complications as detailed here: \url{http://bit.ly/1AhPEK8}\\
+\\
+The Koding system uses an operating system called Ubuntu which is similar to that of the Raspberry Pi. When we talk about cloud service providers we will assume that you have chosen to use Ubuntu as the operating system for your server. All of the commands supplied below are written for use on Ubuntu but are compatible with the Raspbian distribution commonly used on the Raspberry Pi.
 
-The Koding system uses an operating system called Ubuntu which is similar to that of the Raspberry Pi. All of the commands supplied below are compatible with the Raspbian distribution bundled on the Raspberry Pi. 
-
-\subsection{Accessing the SSH remote terminal}
+\subsection{Accessing the remote terminal via SSH}
 \label{sec:terminal}
 
+Koding.com provided us a `terminal' tab in order to execute commands on our web server. When using traditional cloud services or running on a Raspberry Pi, this convenience is not available and so you will need to SSH into the server. The recommend programs to use for each operating system are given below:
 \begin{itemize}
 \item Windows --- Download and install Git. \url{http://git-scm.com/download/win}. Open Programs $\rightarrow$ Git Bash
 \item Mac --- Navigate to /Applications/Utilities/Terminal.
 \item Raspberry Pi --- Navigate to Accessories $\rightarrow$ LxTerminal.
 \end{itemize}
 
+Note that it is also possible to connect to a Koding VM via SSH however the process requires the use of SSH keys. This is explained in detail here: \url{http://learn.koding.com/guides/ssh-into-your-vm}
+
 \subsubsection{Making the connection}
 \label{sec:MakingTheConnection}
 
+You'll need the following information to SSH into your server:
 \begin{itemize}
-\item Your hostname ---``XXX.koding.com'' 
-\item Username --- ubuntu
-\item Password --- emailed to you
+\item The server hostname or IP address e.g. ``102.234.215.48'', ``ec2-52-16-69-97.eu-west-1.compute.amazonaws.com'' 
+\item The username to login as e.g. ``root'', ``ubuntu'', ``glaming''
+\item The password either emailed to you or previously input by yourself at some point
 \end{itemize}
 
 Type into the terminal window:
 
 \begin{lstlisting}
-ssh ubuntu@10.147.243.78
+ssh <username>@<hostname or ip address>
 \end{lstlisting}
-Hit enter. You will now be prompted to type a password. Type this in (You will not see the characters on screen) and hit enter. You should be seeing something similar to this:
+Hit enter. You will now be prompted to type a password. Type this in (you will not see the characters appear on screen) and hit enter. You should see something similar to this:
 
 \begin{lstlisting}
-Last login: Thu Jun  5 12:22:54 2014 from 195.246.108.112
+Last login: Thu Jun 5 12:22:54 from 54.236.18.124
 ubuntu@ip-10-147-243-78:~$
 \end{lstlisting}
-To exit type:
+When you're finished, to exit, type:
 \begin{lstlisting}
 exit
 \end{lstlisting}
 
-A good place to go for help for basic Linux/Unix help is here:\\
-\\
-\url{http://cssbristol.co.uk/tutorials/linux-unix/}\\
-\\
-For an in depth overview of how to use these types of tools look at:
-\url{http://datatoolkit.org/documentation.pdf}
+If you're unfamiliar with using the terminal, a good place to go for help for basic Linux/Unix help is here: \url{http://cssbristol.co.uk/tutorials/linux-unix/}
 
 \subsection{Uploading and Downloading files}
 
 To upload and download files from the machine we will use SFTP. This is a Secure version of the old FTP you may be used to. We will be using Filezilla although any SFTP client will work.\\
 \\
-Using SFTP means you don't have to bother with command lines, so it's much easier for beginners. We recommend downloading a program called Filezilla, It's available for free on Mac, Linux and Windows. (I would like to point out that any SFTP client will work just as well).\\
+Using SFTP means you don't have to bother with command lines, so it's much easier for beginners. We recommend downloading a program called Filezilla, It's available for free on Mac, Linux and Windows. (I would like to point out that any SFTP client will work just as well). It is available here: \url{https://filezilla-project.org/download.php?type=client}\\
 \\
-\url{https://filezilla-project.org/download.php?type=client}\\
 This program should be pretty self explanatory, you will need the same information to connect as with SSH.
 
 \subsection{Ubuntu and apt-get}
@@ -136,11 +137,11 @@ If you just want a working copy of our code you can issue the following command 
 git clone https://github.com/thomasmortensson/node-deployment-workshop.git
 \end{lstlisting}
 
-To upload your own code to the server, first create a zip folder with your work. Once you have this use SFTP to upload the file to the home directory. Once uploaded, login to the server with SSH and type:
+However, to upload your own code to the server, first create a zip folder with your work. Once you have this use SFTP to upload the file to the home directory. Once uploaded, login to the server with SSH and type:
 \begin{lstlisting}
 unzip nameOfZip.zip
 \end{lstlisting}
-We can now change directories so we can interact with our code.
+We can now change directories so we can interact with our code. If you used your own zip replace ``node-deployment-workshop'' with the name of your zip.
 \begin{lstlisting}
 cd node-deployment-workshop
 \end{lstlisting}
