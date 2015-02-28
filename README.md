@@ -24,5 +24,5 @@ Install bower - `sudo npm install -g bower`
 Install node dependencies - `npm install`  
 Install bower dependences - `bower install`  
 Run server - `npm start`  
-Run web server - `python -m SimpleHTTPServer`  
-Open browser and enjoy - `http://localhost:8000`  
+Run web server - `node express.js`  
+Open browser and enjoy - `http://localhost:3000`  
