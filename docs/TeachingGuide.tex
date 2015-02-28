@@ -127,7 +127,8 @@ This program should be pretty self explanatory, you will need the same informati
 To install packages within Ubuntu or Debian we use apt-get from the command line. To install the packages we will need for the project open a terminal and type:
 \begin{lstlisting}
 sudo apt-get update
-sudo apt-get install npm git unzip
+sudo apt-get install npm git unzip authbind
+sudo ln -s /usr/bin/nodejs /usr/bin/node
 \end{lstlisting}
 
 \subsection{Getting our code on the server}
@@ -185,8 +186,26 @@ The start script is defined in the package.json file as: ``node server.js''
 
 \subsection{Web Hosting}
 
+Once you've generated your creation you'll want to host it online. There are many options and we could write about this for days. Instead we will give you an overview of the options available to you.
 
+\begin{itemize}
+\item Node --- A lovely little express server
+\item Apache --- \url{http://bit.ly/1ACEogv}
+\item Python --- \url{http://bit.ly/1LTpgPp}\\python -m SimpleHTTPServer
+\end{itemize}
 
+We have included a simple express server serving on port 3001 in the project directory you can run it with:
+\begin{lstlisting}
+node express.js
+\end{lstlisting}
+
+To run on the default port 80 you have to configure authbind:
+\begin{lstlisting}
+sudo touch /etc/authbind/byport/80
+sudo chown user /etc/authbind/byport/80
+sudo chmod 755 /etc/authbind/byport/80
+authbind node express.js
+\end{lstlisting}
 
 
 \end{document} 
