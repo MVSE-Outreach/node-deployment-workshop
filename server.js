@@ -1,4 +1,4 @@
-var io = require('socket.io')(8080);
+var io = require('socket.io')(3001);
 
 nextClient = 1;
 
