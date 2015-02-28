@@ -21,6 +21,6 @@ io.on('connection', function(socket){
 // var server = express();
 // server.use('/', express.static(__dirname + '/www'));
 
-// var port = 3001;
+// var port = 3000;
 // console.log("Serving on port: " + port);
 // server.listen(port);
