@@ -1,6 +1,6 @@
 
 // Open socket connection to server
-var socket = io('http://192.168.0.22:3001');
+var socket = io('http://localhost:3001');
 
 // When button clicked, send contents of textbox to server for broadcast to all clients      
 $('form').submit(function(){
