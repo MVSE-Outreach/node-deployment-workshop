@@ -18,7 +18,7 @@ This is a basic framework which gives participants a head-start with Node and sh
 
 Install node, npm and git - `sudo apt-get install npm git unzip authbind`  
 Symlink Node - `sudo ln -s /usr/bin/nodejs /usr/bin/node`  
-Clone this git repository - `git clone https://github.com/thomasmortensson/node-deployment-workshop.git`  
+Clone this git repository - `git clone https://github.com/MVSE-Outreach/node-deployment-workshop.git`  
 Change Directory - `cd node-deployment-workshop`  
 Install bower - `sudo npm install -g bower`  
 Install node dependencies - `npm install`  
